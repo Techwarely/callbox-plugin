@@ -1,0 +1,17 @@
+{
+  "name": "callbox",
+  "owner": {
+    "name": "Callbox"
+  },
+  "metadata": {
+    "description": "Callbox for Cursor and Grok Bot: an MCP connector to your recorded calls and meetings, plus skills for after-call notes, Inbox triage and weekly digests.",
+    "version": "1.0.0"
+  },
+  "plugins": [
+    {
+      "name": "callbox",
+      "source": "./plugins/callbox",
+      "description": "Connect your agent to Callbox: projects, recordings, transcripts, notes and activity, with OAuth and a consent page."
+    }
+  ]
+}

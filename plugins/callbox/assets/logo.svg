@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128">
+  <defs>
+    <linearGradient id="tile" x1="0" y1="0" x2="0" y2="128" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#1d1c33"/>
+      <stop offset="1" stop-color="#0b0b12"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="64" cy="44" r="72" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#7472f7" stop-opacity=".22"/>
+      <stop offset="1" stop-color="#7472f7" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="mark" x1="16" y1="1.8" x2="16" y2="30.2" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#b4b2ff"/>
+      <stop offset=".45" stop-color="#7472f7"/>
+      <stop offset="1" stop-color="#4637d1"/>
+    </linearGradient>
+  </defs>
+  <path fill="url(#tile)" d="M40 0H88C124 0 128 4 128 40V88C128 124 124 128 88 128H40C4 128 0 124 0 88V40C0 4 4 0 40 0Z"/>
+  <path fill="url(#glow)" d="M40 0H88C124 0 128 4 128 40V88C128 124 124 128 88 128H40C4 128 0 124 0 88V40C0 4 4 0 40 0Z"/>
+  <path fill="url(#mark)" transform="matrix(2.75 0 0 2.75 20 20)" d="M20 2.375A14.2 14.2 0 1 0 20 29.625V20.308A6.6 6.6 0 1 1 20 11.692ZM21.8 3.039A14.2 14.2 0 0 1 24.8 4.855V27.145A14.2 14.2 0 0 1 21.8 28.961ZM26.6 6.551A14.2 14.2 0 0 1 26.6 25.449Z"/>
+</svg>

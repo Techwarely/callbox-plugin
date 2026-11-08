@@ -1,0 +1,92 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "callbox",
+  "version": "1.0.0",
+  "description": "Your recorded calls and meetings in ChatGPT: find calls, read and search transcripts, file recordings into projects, and save summaries and action items back.",
+  "author": {
+    "name": "Techwarely LLC",
+    "email": "support@callbox.cc",
+    "url": "https://callbox.cc"
+  },
+  "homepage": "https://callbox.cc/agents",
+  "license": "MIT",
+  "keywords": ["calls", "meetings", "transcripts", "google-meet", "zoom", "teams", "notes"],
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "Callbox",
+        "shortDescription": "Search your recorded calls",
+        "longDescription": "Callbox records your calls in Google Meet, Zoom, Teams or any browser tab with a Chrome extension (no bot joins the call), meetings in the room, and audio files you import. It saves each recording to your own Google Drive, in a folder per project, and transcribes it.\n\nWith Callbox in ChatGPT you can:\n- Find a call by client, date or what was said, and read its transcript.\n- Ask what a client said about pricing, a deadline or a decision, across all your calls.\n- Write a summary and the action items of a call and save them on the recording as notes.\n- File new recordings from the Inbox into the right project, and create projects.\n\nWho it is for: people who sell, consult, recruit or run projects on calls, and want their calls searchable and organized without taking notes by hand.\n\nYou choose what ChatGPT can do on Callbox's consent page: reading and organizing are on by default; deleting recordings, changing settings and webhooks are off until you allow them. A deleted recording stays in the trash for 30 days. Transcripts are treated as data, never as instructions.\n\nLimits: ChatGPT cannot start a recording (you start it in Chrome or the Callbox web app), and it cannot delete a recording for good, change your Google connection or delete your account. You need a Callbox account (free plan available) and a Google account.",
+        "developerName": "Techwarely LLC",
+        "category": "Productivity",
+        "capabilities": [],
+        "websiteURL": "https://callbox.cc",
+        "supportURL": "https://callbox.cc/agents#support",
+        "privacyPolicyURL": "https://callbox.cc/privacy",
+        "termsOfServiceURL": "https://callbox.cc/terms",
+        "defaultPrompt": [
+          "What did my last client call decide, and what are the action items?",
+          "Find every call where someone talked about pricing",
+          "Which recordings are still in my Inbox?"
+        ],
+        "brandColor": "#4637D1",
+        "logo": "./assets/logo.png",
+        "composerIcon": "./assets/logo.png"
+      },
+      "review": {
+        "test_cases": {
+          "positive": [
+            {
+              "description": "Answer a question from what was said in a call",
+              "prompt": "What did Acme say about pricing for the pilot, and who has to approve it?",
+              "tools_triggered": "search_transcripts, get_transcript",
+              "expected_behavior": "Finds 'Acme Corp - pilot pricing' and answers from its transcript: $400 a month for 12 sales reps with the first month free; Mark Chen, the CFO, approves anything over $300 and decides by November 20."
+            },
+            {
+              "description": "Summarize a call and save the action items on it",
+              "prompt": "Summarize my latest Globex call and save the action items as a note on the recording.",
+              "tools_triggered": "list_recordings, get_transcript, add_recording_note",
+              "expected_behavior": "Reads 'Globex - weekly sync', summarizes it (CRM integration late, waiting for webhook docs; three Teams meetings without speaker names; renewal if it works by the 15th) and adds an action_items note: Sam sends the webhook docs today; Jordan sends the three meeting links; next sync Tuesday at 10."
+            },
+            {
+              "description": "Search across calls for a topic",
+              "prompt": "Find every call where the December 1 onboarding deadline came up.",
+              "tools_triggered": "search_transcripts",
+              "expected_behavior": "Returns 'Acme Corp - pilot pricing' and 'Acme Corp - onboarding kickoff', each with the excerpt that mentions December first and a link to the recording."
+            },
+            {
+              "description": "Give an overview of the account",
+              "prompt": "Give me an overview of my Callbox: my projects and how many recordings each has.",
+              "tools_triggered": "get_overview, list_projects",
+              "expected_behavior": "Lists the projects Acme Corp (2 recordings) and Globex (1 recording), and 1 recording in the Inbox."
+            },
+            {
+              "description": "File an Inbox recording into a new project",
+              "prompt": "Which recordings are still in my Inbox? Put the interview into a new project called Hiring.",
+              "tools_triggered": "list_recordings, create_project, move_recording",
+              "expected_behavior": "Lists 'Interview - backend engineer' as the only Inbox recording, creates the project Hiring and moves the interview into it, then gives the Callbox link to the recording."
+            }
+          ],
+          "negative": [
+            {
+              "description": "Starting a recording is out of scope: the user starts it in Chrome or the web app",
+              "prompt": "Start recording my next Zoom call."
+            },
+            {
+              "description": "Deleting for good is not available to agents; with the default permissions deleting is off, so the agent explains how to allow it or do it in the web app",
+              "prompt": "Permanently delete the interview recording right now."
+            },
+            {
+              "description": "An unrelated request does not call Callbox",
+              "prompt": "What's the weather in Paris tomorrow?"
+            }
+          ]
+        },
+        "commerce": false
+      },
+      "publication": {
+        "release_notes": "First release: find, read and search your recorded calls, file recordings into projects, and save summaries and action items as notes."
+      }
+    }
+  }
+}

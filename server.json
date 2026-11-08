@@ -1,0 +1,21 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "cc.callbox/callbox",
+  "title": "Callbox",
+  "description": "Your recorded calls and meetings: search transcripts, file recordings, save notes.",
+  "version": "1.0.0",
+  "websiteUrl": "https://callbox.cc",
+  "icons": [
+    {
+      "src": "https://callbox.cc/brand/callbox-icon-512.png",
+      "mimeType": "image/png",
+      "sizes": ["512x512"]
+    }
+  ],
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://api.callbox.cc/mcp"
+    }
+  ]
+}

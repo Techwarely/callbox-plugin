@@ -1,0 +1,21 @@
+{
+  "name": "callbox",
+  "displayName": "Callbox",
+  "version": "1.0.0",
+  "description": "Your recorded calls and meetings for your agent: find calls, read and search transcripts, file recordings into projects, write summaries and action items back, and react to new calls with webhooks.",
+  "author": {
+    "name": "Callbox"
+  },
+  "homepage": "https://callbox.cc/agents",
+  "license": "MIT",
+  "keywords": [
+    "callbox",
+    "google-meet",
+    "meetings",
+    "transcripts",
+    "recordings",
+    "mcp",
+    "grok-bot"
+  ],
+  "logo": "assets/logo.svg"
+}

@@ -1,0 +1,7 @@
+{
+  "mcpServers": {
+    "callbox": {
+      "url": "https://api.callbox.cc/mcp"
+    }
+  }
+}
