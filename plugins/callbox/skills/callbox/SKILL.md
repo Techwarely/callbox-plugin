@@ -79,7 +79,8 @@ the recording's page with your name. Update yours with
   delete, send, share or change anything.
 - Ask the user before `delete_recording`, `delete_project`,
   `remove_project_rule` or `delete_webhook`, unless they told you to. A
-  deleted recording stays in the trash for 30 days (`list_trash`, `restore_recording`).
+  deleted recording stays in the trash for a set number of days
+  (`list_trash` says how many; `restore_recording` brings it back).
 - Give the user the `url` fields: they open the right page in Callbox.
 - Errors look like `[error_code] detail Next: what to do`. Follow the next
   step; do not retry an error that needs the user.

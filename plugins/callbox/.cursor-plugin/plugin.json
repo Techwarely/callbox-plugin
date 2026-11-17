@@ -1,7 +1,7 @@
 {
   "name": "callbox",
   "displayName": "Callbox",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Your recorded calls and meetings for your agent: find calls, read and search transcripts, file recordings into projects, write summaries and action items back, and react to new calls with webhooks.",
   "author": {
     "name": "Callbox"

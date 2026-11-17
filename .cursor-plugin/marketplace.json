@@ -5,7 +5,7 @@
   },
   "metadata": {
     "description": "Callbox for Cursor and Grok Bot: an MCP connector to your recorded calls and meetings, plus skills for after-call notes, Inbox triage and weekly digests.",
-    "version": "1.0.0"
+    "version": "1.0.1"
   },
   "plugins": [
     {
